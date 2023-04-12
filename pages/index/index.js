@@ -33,7 +33,7 @@ Page({
   async personalized() {
     let {result} = await request("/personalized",{limit:10})
     this.setData({
-    recommends: result
+      recommends: result
     })
   },
 
@@ -50,6 +50,9 @@ Page({
           tracks: result.playlist.tracks.slice(3)
         })
       }
+      this.setData({
+        topList: musics
+      })
     }
   },
 

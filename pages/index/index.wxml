@@ -51,7 +51,7 @@
     <swiper-item class="swiperItem" wx:for="{{topList}}" wx:key="id">
       <view class="title">{{item.name}}</view>
       <view class="musicItem" wx:for="{{item.tracks}}" wx:key="id" wx:for-item="musicItem" wx:for-index="musicIndex"> 
-        <image src="{{musicItem.al.picUrl}} />
+        <image src="{{musicItem.al.picUrl}}"/>
         <view class="count">{{musicIndex + 1}}</view>
         <view class="musicName">{{musicItem.name}}</view>
       </view>
