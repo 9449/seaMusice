@@ -38,11 +38,19 @@ Page({
   },
 
   // 获取热歌排行榜
-  async topList() {
-    console.log(this.data.topListIds);
-    // for(this.)
-    // let result = await request("/playlist/detail",{id:0})
-    // console.log(result);
+   async topList() {
+    let ids = this.data.topListIds;
+    let musics = []
+    for (let index = 0; index < ids.length; index++) {
+      let result = await request("/playlist/detail",{id:ids[index]})
+      if(result.playlist) {
+        musics.push({
+          id: result.playlist.id,
+          name: result.playlist.name,
+          tracks: result.playlist.tracks.slice(3)
+        })
+      }
+    }
   },
 
   /**
