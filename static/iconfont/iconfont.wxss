@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4011487 */
-  src: url('//at.alicdn.com/t/c/font_4011487_rji6zi7hcbr.woff2?t=1681284788272') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4011487_rji6zi7hcbr.woff?t=1681284788272') format('woff'),
-       url('//at.alicdn.com/t/c/font_4011487_rji6zi7hcbr.ttf?t=1681284788272') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4011487_ljzcsfj42mi.woff2?t=1681458107489') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4011487_ljzcsfj42mi.woff?t=1681458107489') format('woff'),
+       url('//at.alicdn.com/t/c/font_4011487_ljzcsfj42mi.ttf?t=1681458107489') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-31haoyou:before {
+  content: "\e601";
+}
+
+.icon-youjian:before {
+  content: "\e624";
+}
+
+.icon-pifu:before {
+  content: "\e62b";
+}
+
+.icon-gerenzhuye:before {
+  content: "\e63b";
+}
+
+.icon-huiyuan:before {
+  content: "\e654";
 }
 
 .icon-diantai:before {

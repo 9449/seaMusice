@@ -1,1 +1,184 @@
-/* pages/user/user.wxss */
+.userContainer {
+  width: 100%;
+  height: 100%;
+}
+/* 头部 */
+.header {
+  padding: 100rpx 30rpx 0;
+  height: 520rpx;
+  position: relative;
+}
+.header .bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  filter: blur(1px);
+}
+/* 用户信息 */
+.header .user-info-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 180rpx;
+  z-index: 1;
+}
+
+.user-info-box .portrait {
+  width: 130rpx;
+  height: 130rpx;
+  border: 5rpx solid #fff;
+  border-radius: 50%;
+}
+
+.user-info-box text {
+  font-size: 24;
+  color: #303133;
+  margin-left: 20rpx;
+}
+/* vip信息 */
+.vip-card-box {
+  position: relative;
+  height: 240rpx;
+  color: #f7d680;
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 16rpx 16rpx 0 0;
+  padding: 20rpx 24rpx;
+  font-size: 24rpx;
+}
+.vip-card-box image {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  width: 380rpx;
+  height: 260rpx;
+}
+
+.vip-card-box .btn {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  width: 132rpx;
+  height: 40rpx;
+  font-size: 22rpx;
+  color: #36343c;
+  border-radius: 20rpx;
+  background-color: #f9e6af;
+  text-align: center;
+  line-height: 40rpx;
+}
+.vip-card-box .iconfont {
+  margin-right: 10rpx;
+}
+.vip-card-box .text {
+  margin-top: 55rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.vip-card-box .text text:last-child {
+  margin-top: 15rpx;
+  font-size: 34rpx;
+  color: #d8cba9;
+}
+
+/* 下半部分 */
+.footer {
+  position: relative;
+  padding: 0 30rpx 20rpx;
+  margin-top: -150rpx;
+  background-color: #f5f5f5;
+}
+.footer image {
+  width: 100%;
+  height: 36rpx;
+  position: absolute;
+  left: 0;
+  top: -15rpx;
+}
+
+.nav-section {
+  display: flex;
+  border-radius: 15rpx;
+  background-color: #fff;
+  padding: 20rpx 0;
+}
+.nav-section .nav-item {
+  width: 25%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-section text{
+  font-size: 24rpx;
+}
+
+.nav-section .iconfont {
+  font-size: 50rpx;
+  color: #d43c33;
+  line-height: 80rpx;
+}
+
+/* 个人中心列表 */
+.personalContent {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+/* 最近播放 */
+.personalContent .scrollView {
+  display: flex;
+  height: 160rpx;
+}
+.personalContent .recentPlay {
+  display: flex;
+}
+
+.recentPlayContainer .title {
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 80rpx;
+}
+
+.personalContent .recentPlay image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+}
+
+
+.cardList {
+  margin-top: 20rpx;
+
+}
+.cardList .card-item{
+  border-top: 1rpx solid #eee;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 10rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.cardList .card-item .more {
+  float: right;
+}
+
+/* 最近播放记录 */
+.recentScroll {
+  display: flex;
+  height: 200rpx;
+}
+.recentItem {
+  margin-right: 20rpx;
+}
+.recentItem image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}

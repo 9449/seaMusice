@@ -5,9 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    start:0,
+    coverTransform: 'translateY(0)',
+    coveTransition: '',
+  },
+  touchStart(event) {
+    this.setData({
+      start: event.touches[0].clientY,
+      coveTransition: '',
+    })
   },
 
+  touchMove(event) {
+    let move = event.touches[0].clientY - this.data.start;
+    if (move <= 0) {
+      return;
+    } else if (move > 80) {
+      move = 80;
+    }
+    this.setData({
+      coverTransform: `translateY(${move}rpx)`
+    })
+  },
+  touchEnd(event) {
+    this.setData({
+      start:0,
+      coverTransform: 'translateY(0)',
+      coveTransition: 'transform 1s linear',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
