@@ -1,4 +1,5 @@
 // pages/user/user.js
+import request from '../../utils/request'
 Page({
 
   /**
@@ -9,6 +10,8 @@ Page({
     coverTransform: 'translateY(0)',
     coveTransition: '',
   },
+
+ 
   touchStart(event) {
     this.setData({
       start: event.touches[0].clientY,
@@ -38,8 +41,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

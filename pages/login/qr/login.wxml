@@ -1,0 +1,21 @@
+<view class="qrContainer">
+  <view class="login">
+    <view class="title">
+      扫码登录
+    </view>
+    <view class="qr">
+      <image src="{{qrimg}}" />
+      <view class="note" style="display:{{timeout}}">
+        <view>
+          二维码已失效
+        </view>
+        <view>
+          点击刷新
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      使用<span> 网易云音乐APP </span>扫码登录
+    </view>
+  </view>
+</view>

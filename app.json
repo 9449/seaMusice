@@ -1,14 +1,17 @@
 {
   "pages": [
-    "pages/user/user",
+    "pages/login/qr/login",
     "pages/index/index",
-    "pages/video/video"
+    "pages/user/user",
+    "pages/video/video",
+    "pages/login/login"
+    
   ],
   "tabBar": {
     "color": "#333",
     "selectedColor": "#d43c33",
     "backgroundColor": "#fff",
-    "list":[
+    "list": [
       {
         "pagePath": "pages/index/index",
         "text": "主页",

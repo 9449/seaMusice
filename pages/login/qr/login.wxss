@@ -1,0 +1,60 @@
+.login {
+  margin: 100rpx auto;
+  width: 80%;
+  height: 800rpx;
+  border: 2rpx solid pink;
+  border-radius: 10rpx;
+}
+
+.title {
+  height: 100rpx;
+  font-size: 38rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.qr {
+  position: relative;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 0 auto;
+}
+.qr image {
+  width: 100%;
+  height: 100%;
+}
+.qr .note {
+  position: absolute;
+  width: 400rpx;
+  height: 400rpx;
+  background:rgba(255, 255, 255, 0.9);
+  top: 0;
+  left: 0;
+  font-size: 26rpx;
+}
+.qr .note view:first-child {
+  margin: 80px auto 20rpx;
+  text-align: center;
+}
+.qr .note view:last-child {
+  margin: 0 auto;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #6ABD6A;
+  color: #fff;
+  text-align: center;
+  border: 2rpx solid #5BAF5B;
+  border-radius: 10rpx;
+}
+.content {
+  margin-top: 50rpx;
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.content span {
+  color: #0C73C2;
+}
