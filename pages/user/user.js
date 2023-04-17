@@ -9,6 +9,8 @@ Page({
     start:0,
     coverTransform: 'translateY(0)',
     coveTransition: '',
+    userInfo:{},
+    recentPlayList: []
   },
 
  
@@ -18,7 +20,6 @@ Page({
       coveTransition: '',
     })
   },
-
   touchMove(event) {
     let move = event.touches[0].clientY - this.data.start;
     if (move <= 0) {
@@ -41,7 +42,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+    let userInfo = wx.getStorageSync('userInfo');
+    if (userInfo) {
+      this.setData({
+        userInfo: JSON.parse(userInfo)
+      })
+    }
+    this.recordSongs()
+  },
+
+  // 获取最近的歌曲
+  async recordSongs() {
+    let result = await request('/record/recent/song',{limit:10});
+    let index = 1;
+    let recentPlayList = result.data.list.map((item) => {
+      item.id = index++;
+      return item;
+    })
+    this.setData({
+      recentPlayList
+    })
   },
   
 

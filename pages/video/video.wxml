@@ -1,2 +1,50 @@
-<!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="videoContainer">
+  <!-- 头部搜索框 -->
+  <view class="header">
+    <image src='/static/images/video/video.jpg' />
+    <view>搜索视频</view>
+    <image src='/static/images/logo.png' />
+  </view>
+  <!-- 导航 -->
+  <view class="nav">
+    <scroll-view 
+    class="navScroll" 
+    scroll-x 
+    enable-flex 
+    scroll-into-view="{{'scroll' + groupId}}"
+    scroll-with-animation
+    >
+      <view class="navItem" wx:for="{{videoGroupList}}" wx:key="id" id="{{'scroll'+item.id}}">
+        <view class="navContent {{item.id === groupId ? 'activeItem' : ''}}" bindtap='changeNav' id='{{item.id}}'>{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 视频内容区域 -->
+  <view class="videoContent">
+    <scroll-view class="videoScroll" scroll-y >
+      <view class='videoItem' wx:for="{{videoList}}" wx:key="id">
+        <video class="common" object-fit='fill' wx:if="{{item.data.vid === vid}}" src="../../static/WeChat_20230417180155.mp4"/>
+        <!-- <video class="common" object-fit='fill' wx:if="{{item.data.vid === vid}}" src="http://nas.xuperpark.com:12345/s/NWYSr7LnCPQPrfW/download"/> -->
+        <image class="common" wx:else src="{{item.data.coverUrl}}" />
+        <view class="content">{{item.data.title}}</view>
+        <view class="footer">
+          <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+          <text class="nickName">{{item.data.creator.nickname}}</text>
+          <view class="comments_praised">
+            <text class="item">
+              <text class="iconfont icon-xihuan"></text>
+              <text class="count">{{item.data.praisedCount}}</text>
+            </text>
+            <text class="item">
+              <text class="iconfont icon-xihuan"></text>
+              <text class="count">{{item.data.commentCount}}</text>
+            </text>
+            <button open-type="share" class="item btn">
+              <text class="iconfont icon-androidgengduo"></text>
+            </button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

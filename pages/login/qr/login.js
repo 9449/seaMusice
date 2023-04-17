@@ -56,14 +56,16 @@ Page({
       if (result.code === 803) {
         // 授权成功
         clearInterval(timer)
-        wx.setStorage({key:'cookie',data:result.cookie})
+        let reg = /MUSIC_U=(.*)/;
+        let regResult = result.cookie.match(reg)[0];
+        wx.setStorage({key:'cookie',data:regResult})
         wx.showToast({
           title: result.message,
         })
         this.loginStatus()
-        // wx.switchTab({
-        //   url: '/pages/user/user',
-        // })
+        wx.switchTab({
+          url: '/pages/user/user',
+        })
       }
 
     }, 3000);
@@ -71,7 +73,8 @@ Page({
    // 获取登录状态
    async loginStatus() {
     let result = await request('/login/status',{timestamp:Date.now()});
-    console.log(result);
+    // 获取到用户信息存储到storage中
+    wx.setStorageSync('userInfo',JSON.stringify(result.data.profile))
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

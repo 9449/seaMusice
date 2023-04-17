@@ -3,8 +3,8 @@
   <view class="header">
     <image class="bg" src="/static/user/bgImg2.jpg" />
     <view class="user-info-box">
-      <image class="portrait" src="/static/user/missing-face.png" />
-      <text>游客</text>
+      <image class="portrait" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/static/user/missing-face.png'}}" />
+      <text>{{userInfo.nickname ? userInfo.nickname : '游客'}}</text>
     </view>
     <view class="vip-card-box">
       <image src="/static/user/vip-card-bg.png" />
@@ -28,7 +28,7 @@
   bindtouchend="touchEnd"
   style="transform: {{coverTransform}};transition:{{coveTransition}}"
   >
-    <image src="/static/user/arc.png" />
+    <image class="arc" src="/static/user/arc.png" />
     <!-- 个人中心导航 -->
     <view class="nav-section">
       <view class="nav-item">
@@ -54,9 +54,9 @@
       <view class="recentPlayContainer">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
-        <scroll-view wx:if="{{recentPlayList.length}}" scroll-x class="recentScroll" enable-flex>
+        <scroll-view wx:if="{{recentPlayList.length}}" scroll-x class="recentScroll" scroll-with-animation enable-flex>
           <view class="recentItem" wx:for="{{recentPlayList}}" wx:key="{{id}}">
-            <image src="{{item.song.al.picUrl}}"></image>
+            <image src="{{item.data.al.picUrl}}"></image>
           </view>
         </scroll-view>
         <view wx:else>暂无播放记录</view>

@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/login/qr/login",
+    "pages/video/video",
     "pages/index/index",
     "pages/user/user",
-    "pages/video/video",
+    "pages/login/qr/login",
     "pages/login/login"
     
   ],
