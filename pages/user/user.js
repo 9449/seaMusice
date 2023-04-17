@@ -64,6 +64,14 @@ Page({
     })
   },
   
+  // 登录
+  login() {
+    if(!this.data.userInfo.avatarUrl) {
+      wx.navigateTo({
+        url: '/pages/login/qr/login'
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

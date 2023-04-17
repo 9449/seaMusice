@@ -2,7 +2,7 @@
 <!-- 上半部分 -->
   <view class="header">
     <image class="bg" src="/static/user/bgImg2.jpg" />
-    <view class="user-info-box">
+    <view class="user-info-box" bindtap="login">
       <image class="portrait" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/static/user/missing-face.png'}}" />
       <text>{{userInfo.nickname ? userInfo.nickname : '游客'}}</text>
     </view>

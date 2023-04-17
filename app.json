@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/video/video",
+    "pages/recommendSong/recommendSong",
     "pages/index/index",
+    "pages/video/video",
     "pages/user/user",
     "pages/login/qr/login",
     "pages/login/login"
-    
   ],
   "tabBar": {
     "color": "#333",

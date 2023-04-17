@@ -1,0 +1,34 @@
+<view class="recommendSongContainer">
+  <view class="header">
+    <image  src="/static/images/recommendSong/recommendSong.jpg" />
+    <view class="date">
+      <text class="day">{{day}} </text>/ {{month}}
+    </view>
+  </view>
+  <view class="content">
+    <view class="title">
+      <view>
+        播放全部
+      </view>
+      <view>
+        多选
+      </view>
+    </view>
+    <view class="songs">
+      <scroll-view class="scrollSongs" scroll-y>
+        <view class="songItem">
+          <view class="songInfo">
+            <image src="/static/images/1.png"/>
+            <view class="songName">
+              <view>Teeth</view>
+              <view class="js">S Seconds of Summeconds of Summeconds of Summeconds of Summeconds of Summer</view>
+            </view>
+          </view>
+          <view>
+            <text class="iconfont icon-androidgengduo"></text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

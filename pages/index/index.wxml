@@ -8,7 +8,7 @@
 
   <!-- 五个导航位置 -->
   <view class="navs">
-    <view class="nav-item">
+    <view class="nav-item" bindtap="goto" data-url='/pages/recommendSong/recommendSong'>
       <text class="iconfont icon-meirituijian"></text>
       <text>每日推荐</text>
     </view>
