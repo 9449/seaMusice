@@ -1,4 +1,6 @@
 // pages/recommendSong/recommendSong.js
+import PubSub from 'pubsub-js'
+import request from '../../utils/request'
 Page({
 
   /**
@@ -6,14 +8,40 @@ Page({
    */
   data: {
     day: 1,
-    month: 1
+    month: 1,
+    dailySongs:[],
+    index: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getDate()
+    this.getDate();
+    this.recommendSongs();
+    // 绑定事件
+    PubSub.subscribe('switchSong', (msg, type) => {
+      let index = this.data.index;
+      if (type === "pre") {
+        // 上一首
+        if(index === 0) {
+          index = this.data.dailySongs.length
+        }
+        index--;
+      } else {
+        // 下一首
+        if(index === this.data.dailySongs.length -1) {
+          index = -1;
+        }
+        index++;
+      }
+      let musicId = this.data.dailySongs[index].id;
+      this.setData({
+        index
+      })
+      // 把id 传回去
+      PubSub.publish("updateMusic",musicId);
+    });
   },
 
   getDate() {
@@ -23,6 +51,26 @@ Page({
     this.setData({
       day,
       month
+    })
+  },
+
+  // 获取每日推荐歌曲
+  async recommendSongs() {
+    let result = await request('/recommend/songs');
+    if(result.code === 200) {
+      this.setData({
+        dailySongs : result.data.dailySongs
+      })
+    }
+  },
+  // 跳转到对应的歌曲详情页
+  handSongDetail(event) {
+    let {musicid,index} = event.currentTarget.dataset;
+    this.setData({
+      index
+    })
+    wx.navigateTo({
+      url: '/pages/songDetail/songDetail?musicId=' + musicid
     })
   },
 

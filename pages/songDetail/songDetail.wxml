@@ -1,0 +1,29 @@
+<view class="songDetailContainer">
+  <view class="author">{{songDetail.ar[0].name}}</view>
+  <view class="circle">
+
+  </view>
+  <image class="needle {{isPlay ? 'needLeRotate' : ''}}" src="/static/images/song/needle.png" />
+  <view class="film {{isPlay ? 'isPlay' : ''}}">
+    <image class="disc" src="/static/images/song/disc.png" />
+    <image class="picUrl" src="{{songDetail.al.picUrl}}" />
+  </view>
+  <!-- 进度条 -->
+  <view class="progressControl">
+    <view>{{startTime}}</view>
+    <view class="barControl">
+      <view class="activeBar">
+        <view class="bar"></view>
+      </view>
+    </view>
+    <view>{{endTime}}</view>
+  </view>
+  <!-- 底部控制条 -->
+  <view class="musicControl">
+    <text class="iconfont icon-random-full"></text>
+    <text class="iconfont icon-shangyishoushangyige" id="pre" bindtap="switchSong"></text>
+    <text class="iconfont big {{isPlay?'icon-zanting':'icon-24gl-playCircle'}}" bindtap="changePlay"></text>
+    <text class="iconfont icon-xiayigexiayishou" id="next" bindtap="switchSong"></text>
+    <text class="iconfont icon-24gf-playlist3"></text>
+  </view>
+</view>

@@ -5,8 +5,10 @@
     "pages/video/video",
     "pages/user/user",
     "pages/login/qr/login",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/songDetail/songDetail"
   ],
+  "requiredBackgroundModes": ["audio"],
   "tabBar": {
     "color": "#333",
     "selectedColor": "#d43c33",

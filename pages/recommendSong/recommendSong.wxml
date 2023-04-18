@@ -14,21 +14,15 @@
         多选
       </view>
     </view>
-    <view class="songs">
-      <scroll-view class="scrollSongs" scroll-y>
-        <view class="songItem">
-          <view class="songInfo">
-            <image src="/static/images/1.png"/>
-            <view class="songName">
-              <view>Teeth</view>
-              <view class="js">S Seconds of Summeconds of Summeconds of Summeconds of Summeconds of Summer</view>
-            </view>
-          </view>
-          <view>
-            <text class="iconfont icon-androidgengduo"></text>
-          </view>
+    <scroll-view class="scrollMusics" scroll-y >
+      <view class="scrollItem" wx:for="{{dailySongs}}" wx:key="id" data-index="{{index}}" data-musicid="{{item.id}}" bindtap="handSongDetail">
+        <image src="{{item.al.picUrl}}" />
+        <view class="musicInfo">
+          <text class="musicName">{{item.name}}</text>
+          <text class="author">{{item.ar[0].name}}</text>
         </view>
-      </scroll-view>
-    </view>
+        <text class="iconfont icon-androidgengduo"></text>
+      </view>
+    </scroll-view>
   </view>
 </view>

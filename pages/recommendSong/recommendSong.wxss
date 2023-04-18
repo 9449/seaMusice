@@ -23,36 +23,60 @@
 
 /* 内容区域 */
 .content {
+  position: relative;
+  top: -20rpx;
   padding: 0 20rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+
 }
 .content .title {
   display: flex;
   justify-content: space-between;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 80rpx;
+  line-height: 80rpx;
 }
-.content .songs .songItem {
+.content .scrollMusics {
+  height: calc(100vh - 380rpx);
+}
+
+.scrollItem {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20rpx;
+
 }
-.songItem .songInfo {
+
+.scrollItem image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+
+.scrollItem .musicInfo {
+  height: 80rpx;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-left: 20rpx;
+  
 }
-.songItem image {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 10rpx;
-  margin-right: 20rpx;
-}
-.songInfo .songName {
-  font-size: 28rpx;
-}
-.songInfo .js {
+
+.musicInfo text {
+  height: 40rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
 }
+
+.scrollItem .iconfont {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  right: 0;
+  text-align: right;
+  line-height: 80rpx;
+}
+
